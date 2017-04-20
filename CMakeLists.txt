@@ -28,7 +28,7 @@ set (Tutorial_VERSION_MINOR 0)
 # should we use our own math functions?
 option (USE_MYMATH 
         "Use tutorial provided math implementation" ON) 
-		
+        
 # Check for available system functionality		
 include (CheckFunctionExists)
 # does this system provide the log and exp functions?
@@ -38,10 +38,6 @@ check_function_exists (exp HAVE_EXP)
 # Find necessary packages
 find_package( PythonLibs 2.7 REQUIRED )
 include_directories( ${PYTHON_INCLUDE_DIRS} )
-
-find_package( Boost COMPONENTS python REQUIRED )
-include_directories( ${Boost_INCLUDE_DIR} )
-
 
 ##################################	
 # add the binary tree to the search path for include files
@@ -61,8 +57,6 @@ add_subdirectory(test)
 ###########################################
 # build a CPack driven installer package
 include (InstallRequiredSystemLibraries)
-set (CPACK_RESOURCE_FILE_LICENSE  
-     "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
 set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include (CPack)

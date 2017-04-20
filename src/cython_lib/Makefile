@@ -11,10 +11,6 @@ ifdef PYTHON_INC
     CPPFLAGS += -I$(PYTHON_INC)
 endif
 
-ifdef BOOST_INC
-    CPPFLAGS += -I$(BOOST_INC)
-endif
-
 ifeq ($(CXX),g++)
     OPTFLAGS = -O3 -Wall -march=native -fno-strict-aliasing -fno-associative-math
     OPENMPFLAGS = -fopenmp
