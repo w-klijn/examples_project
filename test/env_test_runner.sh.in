@@ -4,4 +4,6 @@
 # We need to install to test the cython stuff
 . '${CMAKE_INSTALL_PREFIX}'/script/init.sh
 
-python python_unittest_runner.py -p  ./cython
+
+
+python '${CMAKE_CURRENT_SOURCE_DIR}'/python_unittest_runner.py -p $1
